@@ -1,9 +1,11 @@
 /* General styles */
 body {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  background-color: #ffefcc;
+  background: linear-gradient(135deg, #f5f5f5, #e5e5e5);
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /* Header */
@@ -12,19 +14,19 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  background-color: #ff6347;
-  border-radius: 15px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #6bd6c7, #6ac7b8);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
 #header a {
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: bold;
   letter-spacing: 2px;
   text-decoration: none;
   color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #header a:hover {
@@ -36,16 +38,17 @@ body {
   margin: 50px auto;
   padding: 50px;
   max-width: 800px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, #f7f7f7, #e5e5e5);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .page-title {
+  font-family: 'Playfair Display', serif;
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: #ff6347;
+  color: #6bd6c7;
 }
 
 .page-title,
@@ -60,41 +63,44 @@ form {
 }
 
 select {
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   padding: 15px;
   width: 400px;
   margin: 0 auto;
   text-align-last: center;
   color: #777;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.9);
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   appearance: none;
 }
 
 select:focus {
   outline: none;
-  border-color: #ff6347;
+  border-color: #6bd6c7;
 }
 
 input[type="submit"] {
   margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   padding: 15px 20px;
-  background-color: #ff6347;
+  background-color: #6bd6c7;
   color: #fff;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-  background-color: #e74c3c;
+  background-color: #5bc8ba;
 }
 
 .report-data-wrapper {
   margin: 20px auto;
+  font-family: 'Lato', sans-serif;
   font-size: 24px;
   color: #555;
   display: flex;
@@ -110,42 +116,33 @@ input[type="submit"]:hover {
 }
 
 .report-data b {
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  color: #ff6347;
+  color: #6bd6c7;
   margin-right: 10px;
   text-align: left;
   width: 50%;
-}
-
-/* Quirky decorative elements */
-.page-subtitle::before {
-  content: "🌍 ";
-}
-
-form::before {
-  content: "🔍";
-  font-size: 48px;
-  margin-bottom: 20px;
 }
 
 /* Center Google Maps */
 iframe[src^="https://www.google.com/maps"] {
   display: block;
   margin: 0 auto;
-  border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
 #footer {
   padding: 20px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
+  background: linear-gradient(135deg, #6bd6c7, #6ac7b8);
+  border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #footer p {
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   font-size: 12px;
 }
