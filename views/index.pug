@@ -1,0 +1,32 @@
+extends layout
+
+block main-content
+  h1.page-title COVID-19 Data
+  h2.page-subtitle Available Regions
+  //- Country/region selection form
+  form(action="/" method="get" id="region-form")
+    select(name="regionIso" id="region-select", onchange="submitForm();")
+      option(value="" disabled selected) --- Select a Region or Country ---
+      each r in regions
+        - if (!regions.includes(r.region.name))
+          //- Check if regionIso matches current region.iso value
+          if (regionIso && regionIso === r.region.iso)
+            option(value=r.region.iso selected) #{r.region.name}
+          else
+            option(value=r.region.iso) #{r.region.name}
+          - regions.push(r.region.name)
+
+  //- Area selection form
+  if areas && areas.length > 0
+    h2.page-subtitle Available Territories
+    form(action="/report" method="get" id="area-form")
+      select(name="area" id="area-select")
+        option(value="" disabled selected) --- Select a Territory, Province, or State ---
+        each a in areas
+          if (a.region.lat != null && a.region.long != null && a.region.lat.trim() !== "" && a.region.long.trim() !== "" && parseFloat(a.region.lat.trim()) !== 0.0 && parseFloat(a.region.long.trim()) !== 0.0)
+          option(value=a.region.province) #{a.region.province}
+      input(type="hidden" name="regionIso" value=regionIso)
+      input(type="submit" value="Get Report" disabled)
+
+  //- JavaScript for index.pug
+  script(type="text/javascript", src="/script.js")

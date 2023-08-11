@@ -1,0 +1,37 @@
+extends layout
+
+block main-content 
+  - if (report && report[0] && report[0].region) 
+    h1.page-title COVID-19 Report for #{report[0].region.province ? report[0].region.province + ', ' : ''}#{report[0].region.name ? report[0].region.name : 'Error. Sorry, the data you requested either returned an error, is inaccessible, or requries the paid version of the COVID API to access.'}
+    div.report-data-wrapper
+      - if (report[0].confirmed) 
+        p.report-data
+          b Confirmed: 
+          span #{report[0].confirmed.toLocaleString()}
+      - if (report[0].deaths) 
+        p.report-data
+          b Deaths: 
+          span #{report[0].deaths.toLocaleString()}
+      - if (report[0].active) 
+        p.report-data
+          b Active: 
+          span #{report[0].active.toLocaleString()}
+      - if (report[0].fatality_rate) 
+        p.report-data
+          b Fatality Rate: 
+          span #{report[0].fatality_rate}
+      - if (report[0].last_update) 
+        p.report-data
+          b Last updated: 
+          span #{new Date(report[0].last_update).toLocaleString()}
+
+    - if (report[0].region.lat && report[0].region.long) 
+      iframe(width="550",
+        height="350",
+        frameborder="0", style="border:0",
+        referrerpolicy="no-referrer-when-downgrade",
+        src=`https://www.google.com/maps/embed/v1/place?key=${gMapsApiKey}&q=${report[0].region.province},${report[0].region.name}&center=${report[0].region.lat},${report[0].region.long}`,
+        allowfullscreen)
+  - else 
+    h1.page-title Error
+    h2.page-subtitle Sorry, the data you requested either returned an error, is inaccessible, or requries the paid version of the COVID API to access.
