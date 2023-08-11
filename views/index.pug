@@ -2,7 +2,7 @@ extends layout
 
 block main-content
   h1.page-title COVID-19 Data
-  h2.page-subtitle Available Regions
+  h2.page-subtitle Select your region
   //- Country/region selection form
   form(action="/" method="get" id="region-form")
     select(name="regionIso" id="region-select", onchange="submitForm();")
